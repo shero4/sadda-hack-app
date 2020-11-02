@@ -1,5 +1,7 @@
 {
   "name": "saddahack",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
