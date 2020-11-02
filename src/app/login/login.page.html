@@ -24,10 +24,12 @@
       <ion-input [(ngModel)]="password" name="password" type="password" placeholder="Password" required></ion-input>
     </ion-item>
   </div>
-
+  <div class="link" align="center">
+    <a [routerLink]="['/info']" class="medium-text" style="color: #d3998f;">Register?</a>
+   </div>
   <div class="foot">
 
-    <ion-button (click)="checkRegister()" id="signInButton" #signInButton type="submit" color="light" shape="round"
+    <ion-button (click)="login()" id="signInButton" #signInButton type="submit" color="light" shape="round"
       expand="block" style="margin-top: 2em; margin-bottom: 4px;">Log-In</ion-button>
 
   </div>

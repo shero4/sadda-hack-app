@@ -5,6 +5,24 @@
     <h1>Add some details.</h1>
   </div>
   <div class="login" align="center">
+    &nbsp;
+    <ion-item lines="none" align="center">
+      <ion-label position="floating">Email</ion-label>
+      <ion-input [(ngModel)]="email" name="email" type="text" required></ion-input>
+    </ion-item>
+    &nbsp;
+    <ion-item lines="none" align="center">
+      <ion-label position="floating">Password</ion-label>
+      <ion-input [(ngModel)]="password" name="password" type="password" required></ion-input>
+    </ion-item>
+
+    &nbsp;
+    <ion-item lines="none" align="center">
+      <ion-label position="floating">Confirm Password</ion-label>
+      <ion-input [(ngModel)]="CPassword" name="CPassword" type="password" required></ion-input>
+    </ion-item>
+  
+    &nbsp;
     <ion-item lines="none" align="center" style=" margin-top:20px ;">
       <ion-label position="floating">Hospital Name</ion-label>
       <ion-input [(ngModel)]="hospitalName" name="hospitalName" type="text" required></ion-input>
@@ -26,7 +44,6 @@
       <ion-label position="floating">Address</ion-label>
       <ion-input [(ngModel)]="address" name="address" type="text" required></ion-input>
     </ion-item>
-    
   </div>
 
 

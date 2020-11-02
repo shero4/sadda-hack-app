@@ -35,37 +35,7 @@ ionViewDidEnter()
   this.menu.enable(false); 
 }
 public RegisterWithEmail() {
-  this.presentLoading()
-  this.afauth.createUserWithEmailAndPassword(
-        this.email,
-        this.password
-      ).then(async (data)=>{
-        let uid = data.user.uid;
-        data.user.updateProfile({
-          displayName: "",
-          photoURL: "https://kathandesai.co/images/hospital-buildings.svg"
-        })
-        this.afstore.collection('userdata').doc(uid).set({
-          password: this.password,
-          uid: uid,
-          email: this.email,
-          img: "https://kathandesai.co/images/hospital-buildings.svg"
-        })
-        this.presentToast("Logged in successfully") 
-        this.router.navigateByUrl('/info', { replaceUrl: true })
-      }).catch((err)=>{
-        console.log(err)
-        if (err.code == "auth/email-already-in-use") {
-          this.presentToast("User exists")
-          this.login()
-        }
-        if (err.code == "auth/invalid-email") {
-          this.presentToast("Invalid Email")
-        }
-        if (err.code == "auth/network-request-failed") {
-          this.presentToast("Poor network")
-        }
-      }); 
+ 
 } 
  async login(){
   this.afauth.signInWithEmailAndPassword(

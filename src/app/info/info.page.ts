@@ -17,6 +17,9 @@ export class InfoPage implements OnInit {
   hospitalName:string;
   username:string;
   uid:string;
+  email:string
+  password:string;
+  CPassword:string;
   constructor(
     public afauth: AngularFireAuth,
     public afstore: AngularFirestore,
@@ -30,6 +33,7 @@ export class InfoPage implements OnInit {
   ) { }
 
   ngOnInit() {
+
     this.platform.backButton.observers.pop();
   }
   async presentToast(message1: string) {
@@ -52,27 +56,57 @@ export class InfoPage implements OnInit {
     console.log('Loading dismissed!');
   }
   async submit(){
-   this.uid= (await this.afauth.currentUser).uid 
-   await  this.afstore.collection('userdata').doc(this.uid).update({
-     hospitalName:this.hospitalName,
-     number:this.number,
-     username:this.username,
-     address:this.address
-   })
-   .catch((err) => {
-     console.log(err.code)
-    if (err.code == "auth/network-request-failed") {
-      this.presentToast("Poor network")
-    }
-    if(err.code == "invalid-argument")
+    if(this.password == this.CPassword)
     {
-      this.presentToast("Enter all details")
-    }
-   })
-   await (await this.afauth.currentUser).updateProfile({
-     displayName:this.username,
-   })
+     await this.afauth.createUserWithEmailAndPassword(
+          this.email,
+          this.password
+        ).then(async (data)=>{
+          let uid = data.user.uid;
+          data.user.updateProfile({
+      
+            displayName: this.username,
+            photoURL: "https://kathandesai.co/images/hospital-buildings.svg",
+          })
+          this.afstore.collection('userdata').doc(uid).set({
+            uid: uid,
+            email: this.email,
+            img: "https://kathandesai.co/images/hospital-buildings.svg",
+            hospitalName:this.hospitalName,
+            number:this.number,
+            username:this.username,
+            address:this.address
+          })
+          .catch ((err) => {
+            if (err.code == "auth/network-request-failed") {
+              this.presentToast("Poor network")
+            }
+            if(err.code == "invalid-argument")
+            {
+              this.presentToast("Enter all details")
+            }
+          })
+          this.presentToast("Logged in successfully") 
+          this.router.navigateByUrl('/info', { replaceUrl: true })
+        }).catch((err)=>{
+          console.log(err)
+          if (err.code == "auth/email-already-in-use") {
+            this.presentToast("User exists")
+          }
+          if (err.code == "auth/invalid-email") {
+            this.presentToast("Invalid Email")
+          }
+          if (err.code == "auth/network-request-failed") {
+            this.presentToast("Poor network")
+          }
+        });
    await this.presentToast('values submitted.')
    await this.router.navigateByUrl('/tabs',{ replaceUrl: true })
   }
+  else
+  {
+    this.presentToast('Password dont match.')
+  }
+  }
+  
 }
