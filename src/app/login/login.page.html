@@ -1,0 +1,34 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+  <div class="icon" align="center">
+    <img src="../../assets/photos/medica.png">
+    <h2>Medica.</h2>
+    <h1>Sign In to your account </h1>
+  </div>
+  <div class="login" align="center">
+    <ion-item lines="none" align="center" style=" margin-top:20px ;">
+      <!-- <ion-label position="floating">Email</ion-label> -->
+      <ion-icon name="person-outline"></ion-icon>
+      <ion-input [(ngModel)]="email" name="email" type="text" placeholder="Email" required></ion-input>
+    </ion-item>
+
+    &nbsp;
+    <ion-item lines="none" align="center">
+      <!-- <ion-label position="floating">Password</ion-label> -->
+      <ion-icon name="key-outline"></ion-icon>
+      <ion-input [(ngModel)]="password" name="password" type="password" placeholder="Password" required></ion-input>
+    </ion-item>
+  </div>
+
+  <div class="foot">
+
+    <ion-button (click)="checkRegister()" id="signInButton" #signInButton type="submit" color="light" shape="round"
+      expand="block" style="margin-top: 2em; margin-bottom: 4px;">Log-In</ion-button>
+
+  </div>
+</ion-content>
