@@ -2,7 +2,7 @@ ion-content{
     --background: #FEECEC; 
 }
 .topText{
-    background:#f6d9d8;
+    background:#FCD7D8;
     border: 1px transparent;
     border-radius: 25px;
     height: 70px;
@@ -19,8 +19,23 @@ ion-card{
     border:1px transparent;
     border-radius: 25px;
     font-family: "Europa-bold";  
+    background: #FCD7D8;
+    ion-card-title{
+        font-size: 35px;
+        color: #EB9497;
+    }
    
 }
-ion-item{
-    font-family: "Europa-bold";  
-}
+
+   
+    p{
+        font-size: 18px;
+        font-family: "Europa-bold"; 
+        color: #E8A9AA;
+    } 
+
+    ion-card-content{
+        ion-button{
+            --background:#F1ADB0
+        }
+    }

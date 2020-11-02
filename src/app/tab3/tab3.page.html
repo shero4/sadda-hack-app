@@ -1,16 +1,18 @@
 <ion-content [fullscreen]="true">
   <div class="topText" align="center">
-    <h2 style="font-size:35px">Dashboard</h2>
+    <h2 style="font-size:35px">HOSPITALS</h2>
    </div>
-  <ion-card align="center">
-    <ion-card-header>
-      <ion-card-title>Hospitals</ion-card-title>
-      <ion-list *ngFor="let hosp of allHospData">
-        <ion-item>
-          {{hosp.name}}: {{hosp.status.dsc}}
-        </ion-item>
-      </ion-list>
+  <ion-card align="center"  *ngFor="let hosp of allHospData">
+    <ion-card-header align="center">
+      <ion-card-title> {{hosp.name}}</ion-card-title>
     </ion-card-header>
+    <ion-card-content align="center">
+        <p style="color:#E8A9AA">{{hosp.phone}}</p>
+        <p *ngIf="check(hosp)" style="color: #894040;">Urgent</p>
+        <ion-button *ngIf="check(hosp)" shape="round">Help Them</ion-button>
+        <p *ngIf="!check(hosp)" style="color: #894040;">Self-Sufficient</p>
+        <br>
+    </ion-card-content>
   </ion-card>  
   <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="presentModal()">
     <ion-fab-button>
