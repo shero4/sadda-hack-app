@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Platform } from '@ionic/angular';
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { AngularFireAuth } from '@angular/fire/auth';
+import * as firebase from 'firebase/app'
 
 @Component({
   selector: 'app-tab1',
@@ -9,7 +10,19 @@ import { AngularFireAuth } from '@angular/fire/auth';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page {
-  
+       currentCapacity:Number
+       maxCapacity:Number
+       masks: Number
+       gloves: Number
+       suits: Number
+       sanitizer: Number
+       ventilators: Number
+       oxygenCylinder: Number
+       beds: Number
+       drugs: Number
+       pulseOximeters: Number
+       bloodPressureMonitors: Number
+       heartRateMonitors: Number
   constructor(
     private platform:Platform,
     private http: HttpClient,
@@ -24,8 +37,8 @@ export class Tab1Page {
   }
   ngOnInit() {
     this.platform.backButton.observers.pop();
+    
   }
-
   getHospital() {
     let options = {
       headers: {
