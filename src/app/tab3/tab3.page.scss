@@ -8,6 +8,7 @@ ion-content{
     height: 70px;
     margin: 40px;
     color: #EB9497;
+    font-family: "Europa-bold";  
     h2{
        
         padding-top: 15px;
@@ -17,5 +18,9 @@ ion-card{
     margin: 40px;
     border:1px transparent;
     border-radius: 25px;
+    font-family: "Europa-bold";  
    
+}
+ion-item{
+    font-family: "Europa-bold";  
 }

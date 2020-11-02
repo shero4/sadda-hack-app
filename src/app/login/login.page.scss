@@ -10,10 +10,12 @@ ion-content{
         margin-top: -10px;
         font-size: 55px;
         color: #EB9497;
+        font-family: "Europa-bold";
     }
     h1{
         font-size: 15px;
         color: #EB9497;
+        font-family: "Europa-bold";
     }
 }
 .login{
@@ -37,11 +39,16 @@ ion-content{
       }
       ion-input{
           color: white;
+          font-family: "Europa-bold";
       }
       ion-label{
           font-size: 18px;
+          font-family: "Europa-bold";
       }
    
+}
+a{
+    font-family: "Europa-bold";
 }
 .foot{
     --box-shadow:none;
@@ -57,6 +64,7 @@ ion-content{
             font-style: oblique;
             color:  #c75f5f;
             font-size: 35px;
+            font-family: "Europa-bold"; 
         }
         ion-avatar{
             width: 4em !important; 

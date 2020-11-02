@@ -4,6 +4,7 @@ ion-content{
 ion-toolbar{
     --background: #FEECEC; 
     color: #EB9497;
+    font-family: "Europa-bold";
 }
 .card {
     margin: 40px; 
@@ -11,9 +12,11 @@ ion-toolbar{
         opacity: 0.75;
         --background: #c75f5f;
         color: white;
+        font-family: "Europa-bold";  
     }
     ion-card-title{
-        color: white;  
+        color: white;
+        font-family: "Europa-bold";  
     }
 }
 agm-map{
