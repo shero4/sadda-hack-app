@@ -35,17 +35,18 @@ export class Tab1Page {
     firebase.default.auth().onAuthStateChanged(user => {
       this.email = user.email
       this.getHospitalData().subscribe(data => {
-        this.currentCapacity = data[0].capacity.current
-        this.maxCapacity = data[0].capacity.total
-        this.beds = data[0].items.beds
-        this.bloodPressureMonitors = data[0].items.bloodPressureMonitors
-        this.drugs = data[0].items.drugs
-        this.gloves = data[0].items.gloves
-        this.masks = data[0].items.masks
-        this.oxygenCylinder = data[0].items.oxygenCylinder
-        this.pulseOximeters = data[0].items.pulseOximeters
-        this.suits = data[0].items.suits
-        this.ventilators = data[0].items.ventilators
+        console.log(data)
+        this.currentCapacity = data[0].capacity.current || 0
+        this.maxCapacity = data[0].capacity.total || 0
+        this.beds = data[0].items.beds || 0
+        this.bloodPressureMonitors = data[0].items.bloodPressureMonitors || 0
+        this.drugs = data[0].items.drugs || 0
+        this.gloves = data[0].items.gloves || 0
+        this.masks = data[0].items.masks || 0
+        this.oxygenCylinder = data[0].items.oxygenCylinder || 0
+        this.pulseOximeters = data[0].items.pulseOximeters || 0
+        this.suits = data[0].items.suits || 0
+        this.ventilators = data[0].items.ventilators || 0
       })
     })
   }
@@ -70,8 +71,8 @@ export class Tab1Page {
       }
     }
     let postData = {
-      currentCapacity: this.currentCapacity,
-      maxCapacity: this.maxCapacity,
+      current: this.currentCapacity,
+      max: this.maxCapacity,
       beds: this.beds,
       bloodPressureMonitors: this.bloodPressureMonitors,
       drugs: this.drugs,
@@ -82,7 +83,9 @@ export class Tab1Page {
       suits: this.suits,
       ventilators: this.ventilators,
     }
-    return this.http.post('https://medica-app.arhaanb.co/api/request', postData, {...options,responseType: 'text'})
+    this.http.post('https://medica-app.arhaanb.co/api/set', postData, {...options,responseType: 'text'}).subscribe(data => {
+      console.log(data)
+    })
   }
 
   getHospitalData() {

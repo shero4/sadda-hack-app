@@ -26,10 +26,6 @@ export class Tab2Page {
   ngOnInit(){
     firebase.default.auth().onAuthStateChanged(async user => {
         this.email = user.email
-        console.log(this.email)
-        this.sendRequest().subscribe(data => {
-          console.log(data)
-        })
       })
   }
 
@@ -52,6 +48,8 @@ export class Tab2Page {
       request: this.problem,
       dsc: this.description
     }
-    return this.http.post('https://medica-app.arhaanb.co/api/request', postData, {...options,responseType: 'text'})
+    this.http.post('https://medica-app.arhaanb.co/api/request', postData, {...options,responseType: 'text'}).subscribe(data => {
+      console.log(data)
+    })
   }
 }
