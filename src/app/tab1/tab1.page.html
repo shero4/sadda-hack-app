@@ -1,19 +1,12 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Dashboard
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Dashboard</ion-title>
+ 
+    <ion-toolbar align="center" style="margin-top: 20px;">
+      <ion-title style="font-size:35px">Dashboard</ion-title>
     </ion-toolbar>
-  </ion-header>
+
   <div class="top" align="center">
-    <h2>Your Capacity.</h2>
+    <h2 style="text-decoration: underline;">Your Capacity.</h2>
     <ion-item>
       <ion-label position="floating">Current Capacity</ion-label>
       <ion-input type="number" [(ngModel)]="currentCapacity" name=" currentCapacity" required></ion-input>
@@ -38,38 +31,32 @@
       <ion-input type="number" [(ngModel)]="suits" name="suits" required></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="floating">Sanitizer</ion-label>
-      <ion-input type="number" [(ngModel)]="sanitizer" name="sanitizer" required ></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating">ventilators</ion-label>
+      <ion-label position="floating">Ventilators</ion-label>
       <ion-input type="number" [(ngModel)]="ventilators" name="ventilators" required></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="floating">oxygenCylinder</ion-label>
+      <ion-label position="floating">Oxygen Cylinder</ion-label>
       <ion-input type="number" [(ngModel)]="oxygenCylinder" name="oxygenCylinder" required ></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="floating">beds</ion-label>
+      <ion-label position="floating">Beds</ion-label>
       <ion-input type="number" [(ngModel)]="beds" name="beds" required></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="floating">drugs</ion-label>
+      <ion-label position="floating">Drugs</ion-label>
       <ion-input type="number" [(ngModel)]="drugs" name="drugs" required ></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="floating">pulseOximeters</ion-label>
+      <ion-label position="floating">Pulse Oximeters</ion-label>
       <ion-input type="number" [(ngModel)]="pulseOximeters" name="pulseOximeters" required ></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="floating">bloodPressureMonitors</ion-label>
+      <ion-label position="floating">Blood Pressure Monitors</ion-label>
       <ion-input type="number" [(ngModel)]="bloodPressureMonitors" name="bloodPressureMonitors" required ></ion-input>
     </ion-item>
-    <ion-item>
-      <ion-label position="floating">heartRateMonitors</ion-label>
-      <ion-input type="number" [(ngModel)]="heartRateMonitors" name="heartRateMonitors" required ></ion-input>
-    </ion-item>
-    <ion-button (click)="saveData()">Save</ion-button>
+ 
+    <ion-button (click)="submit()" type="submit" color="light" shape="round"
+    expand="block" style="margin-top: 2.5em; margin-bottom: 4px;">Submit</ion-button>
   </div>
   <ion-card>
     <ion-card-header>
