@@ -16,24 +16,28 @@ export class Tab2Page {
     private http: HttpClient,
     public afauth: AngularFireAuth,
     ) {
-      firebase.default.auth().onAuthStateChanged(async user => {
+     
+    }
+ ngOnInit(){
+    firebase.default.auth().onAuthStateChanged(async user => {
         this.email = user.email
+        console.log(this.email)
         this.sendRequest().subscribe(data => {
           console.log(data)
         })
       })
-    }
-
+ }
   sendRequest() {
     let options = {
       headers: {
-        'email': this.email
-      }
+        'email': this.email, 
+      } 
+         
     }
     let postData = {
-      'request': 'blablabla',
-      'dsc': 'blablabla'
+      request:"goyalnoob",
+      dsc: "goyalnoob"
     }
-    return this.http.post('https://medica-app.arhaanb.co/api/request', postData, options)
+    return this.http.post('https://medica-app.arhaanb.co/api/request', postData, {...options,responseType: 'text'})
   }
 }
