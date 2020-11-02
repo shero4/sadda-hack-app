@@ -1,18 +1,8 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Hospitals
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Hospitals</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  <ion-card>
+  <div class="topText" align="center">
+    <h2 style="font-size:35px">Dashboard</h2>
+   </div>
+  <ion-card align="center">
     <ion-card-header>
       <ion-card-title>Hospitals</ion-card-title>
       <ion-list *ngFor="let hosp of allHospData">
