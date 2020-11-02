@@ -2,9 +2,11 @@ import { Component } from '@angular/core';
 import { Platform } from '@ionic/angular';
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { Router } from '@angular/router';
 import * as firebase from 'firebase';
 import { ModalController } from '@ionic/angular';
 import { NotificationsPage } from '../notifications/notifications.page';
+import { ToastController} from '@ionic/angular';
 
 @Component({
   selector: 'app-tab1',
@@ -30,7 +32,9 @@ export class Tab1Page {
     private platform: Platform,
     private http: HttpClient,
     public afauth: AngularFireAuth,
-    public modalController: ModalController
+    public modalController: ModalController,
+    public router:Router,
+    public toastController:ToastController
   ) {
     firebase.default.auth().onAuthStateChanged(user => {
       this.email = user.email
@@ -94,5 +98,19 @@ export class Tab1Page {
       }
     }
     return this.http.get(`https://medica-app.arhaanb.co/api/user`, options);
+  }
+  async logout(){
+    
+    await this.afauth.signOut();
+    await this.router.navigateByUrl('/login');
+    await this.presentToast("you are logged out");
+
+  }
+  async presentToast(message1: string) {
+    const toast = await this.toastController.create({
+      message: message1,
+      duration: 2000
+    });
+    toast.present();
   }
 }
