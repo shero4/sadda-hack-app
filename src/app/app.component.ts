@@ -39,7 +39,6 @@ export class AppComponent {
     this.presentLoading();
     firebase.default.auth().onAuthStateChanged(async (user) => {
       if(user && user.uid) {
-        console.log(firebase.default.auth().currentUser.email)
         this.router.navigateByUrl('/tabs')
         this.presentToast("successfully logged in");
       } else {
