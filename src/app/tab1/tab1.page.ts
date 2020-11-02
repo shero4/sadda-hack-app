@@ -18,14 +18,12 @@ export class Tab1Page {
   masks: Number;
   gloves: Number;
   suits: Number;
-  sanitizer: Number;
   ventilators: Number;
   oxygenCylinder: Number;
   beds: Number;
   drugs: Number;
   pulseOximeters: Number;
   bloodPressureMonitors: Number;
-  heartRateMonitors: Number;
   email:string;
 
   constructor(
@@ -48,8 +46,6 @@ export class Tab1Page {
         this.pulseOximeters = data[0].items.pulseOximeters
         this.suits = data[0].items.suits
         this.ventilators = data[0].items.ventilators
-        this.heartRateMonitors = data[0].items.heartRateMonitors || 0
-        this.sanitizer = data[0].items.sanitizer || 0
       })
     })
   }
@@ -85,8 +81,6 @@ export class Tab1Page {
       pulseOximeters: this.pulseOximeters,
       suits: this.suits,
       ventilators: this.ventilators,
-      heartRateMonitors: this.heartRateMonitors,
-      sanitizer: this.sanitizer
     }
     return this.http.post('https://medica-app.arhaanb.co/api/request', postData, {...options,responseType: 'text'})
   }
