@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Tab2Page } from './tab2.page';
-import { AgmCoreModule } from '@agm/core';
 
 import { Tab2PageRoutingModule } from './tab2-routing.module';
 
@@ -14,7 +13,6 @@ import { Tab2PageRoutingModule } from './tab2-routing.module';
     CommonModule,
     FormsModule,
     Tab2PageRoutingModule,
-    AgmCoreModule
   ],
   declarations: [Tab2Page]
 })

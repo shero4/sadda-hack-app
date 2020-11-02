@@ -32,11 +32,6 @@ export class Tab2Page {
         this.email = user.email
       })
   }
-  onChoseLocation(event)
-  {
-    this.lat = event.coords.lat;
-    this.lng = event.coords.lng; 
-  }
 
   async presentModal() {
     const modal = await this.modalController.create({
