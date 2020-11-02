@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { AngularFireAuth } from '@angular/fire/auth';
 import * as firebase from 'firebase';
+import { ModalController } from '@ionic/angular';
+import { NotificationsPage } from '../notifications/notifications.page';
 
 @Component({
   selector: 'app-tab2',
@@ -17,8 +19,9 @@ export class Tab2Page {
   constructor(
     private http: HttpClient,
     public afauth: AngularFireAuth,
+    public modalController: ModalController,
     ) {
-     
+      
     }
   ngOnInit(){
     firebase.default.auth().onAuthStateChanged(async user => {
@@ -28,6 +31,15 @@ export class Tab2Page {
           console.log(data)
         })
       })
+  }
+
+  async presentModal() {
+    const modal = await this.modalController.create({
+      component: NotificationsPage,
+      cssClass: 'my-custom-class',
+      swipeToClose: true,
+    });
+    return await modal.present();
   }
   
   sendRequest() {

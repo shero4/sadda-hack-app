@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { AngularFireAuth } from '@angular/fire/auth';
 import * as firebase from 'firebase';
+import { ModalController } from '@ionic/angular';
+import { NotificationsPage } from '../notifications/notifications.page';
 
 @Component({
   selector: 'app-tab3',
@@ -15,12 +17,22 @@ export class Tab3Page {
   constructor(
     private http: HttpClient,
     public afauth: AngularFireAuth,
-    ) {
-      this.getAllHospitalData().subscribe(data => {
-        this.allHospData = data
-        console.log(this.allHospData)
-      })
-    }
+    public modalController: ModalController
+  ) {
+    this.getAllHospitalData().subscribe(data => {
+      this.allHospData = data
+      console.log(this.allHospData)
+    })
+  }
+
+  async presentModal() {
+    const modal = await this.modalController.create({
+      component: NotificationsPage,
+      cssClass: 'my-custom-class',
+      swipeToClose: true,
+    });
+    return await modal.present();
+  }
 
   getAllHospitalData() {
     let options = {

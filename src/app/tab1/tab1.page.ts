@@ -3,12 +3,15 @@ import { Platform } from '@ionic/angular';
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { AngularFireAuth } from '@angular/fire/auth';
 import * as firebase from 'firebase';
+import { ModalController } from '@ionic/angular';
+import { NotificationsPage } from '../notifications/notifications.page';
 
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss']
 })
+
 export class Tab1Page {
   currentCapacity: Number;
   maxCapacity: Number;
@@ -29,6 +32,7 @@ export class Tab1Page {
     private platform: Platform,
     private http: HttpClient,
     public afauth: AngularFireAuth,
+    public modalController: ModalController
   ) {
     firebase.default.auth().onAuthStateChanged(user => {
       this.email = user.email
@@ -52,6 +56,15 @@ export class Tab1Page {
   
   ngOnInit() {
     this.platform.backButton.observers.pop();
+  }
+
+  async presentModal() {
+    const modal = await this.modalController.create({
+      component: NotificationsPage,
+      cssClass: 'my-custom-class',
+      swipeToClose: true,
+    });
+    return await modal.present();
   }
 
   updateHospitalData() {
