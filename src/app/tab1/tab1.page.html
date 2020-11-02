@@ -12,38 +12,6 @@
       <ion-title size="large">Dashboard</ion-title>
     </ion-toolbar>
   </ion-header>
-  <!-- <ion-card>
-    <ion-card-header>
-      <ion-card-title>Your personal dashboard at Medica.</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <ion-item>
-        <ion-label position="floating">Capacity</ion-label>
-        <ion-input type="number" ></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label position="floating">Capacity</ion-label>
-        <ion-input type="number"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label position="floating">Capacity</ion-label>
-        <ion-input type="number" ></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label position="floating">Capacity</ion-label>
-        <ion-input type="number"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label position="floating">Capacity</ion-label>
-        <ion-input type="number"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label position="floating">Capacity</ion-label>
-        <ion-input type="number"></ion-input>
-      </ion-item>
-      <ion-button>Save</ion-button>
-    </ion-card-content>
-  </ion-card> -->
   <div class="top" align="center">
     <h2>Your Capacity.</h2>
     <ion-item>
@@ -59,7 +27,7 @@
     <h2>Register your items.</h2>
     <ion-item>
       <ion-label position="floating">Masks</ion-label>
-      <ion-input type="number" [(ngModel)]="mask" name=" mask" required></ion-input>
+      <ion-input type="number" [(ngModel)]="masks" name=" mask" required></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating">Gloves</ion-label>
@@ -101,14 +69,15 @@
       <ion-label position="floating">heartRateMonitors</ion-label>
       <ion-input type="number" [(ngModel)]="heartRateMonitors" name="heartRateMonitors" required ></ion-input>
     </ion-item>
+    <ion-button (click)="saveData()">Save</ion-button>
   </div>
   <ion-card>
     <ion-card-header>
       <ion-card-title>Hospital Accomodation</ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      5 / 12
-      <ion-progress-bar value="0.5"></ion-progress-bar>
+      {{currentCapacity}} / {{maxCapacity}}
+      <ion-progress-bar value="{{currentCapacity/maxCapacity}}"></ion-progress-bar>
     </ion-card-content>
   </ion-card>
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">

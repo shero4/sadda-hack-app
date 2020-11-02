@@ -11,6 +11,8 @@ import * as firebase from 'firebase';
 
 export class Tab2Page {
   email: string;
+  description: string;
+  problem: string;
 
   constructor(
     private http: HttpClient,
@@ -18,7 +20,7 @@ export class Tab2Page {
     ) {
      
     }
- ngOnInit(){
+  ngOnInit(){
     firebase.default.auth().onAuthStateChanged(async user => {
         this.email = user.email
         console.log(this.email)
@@ -26,17 +28,17 @@ export class Tab2Page {
           console.log(data)
         })
       })
- }
+  }
+  
   sendRequest() {
     let options = {
       headers: {
         'email': this.email, 
       } 
-         
     }
     let postData = {
-      request:"goyalnoob",
-      dsc: "goyalnoob"
+      request: this.problem,
+      dsc: this.description
     }
     return this.http.post('https://medica-app.arhaanb.co/api/request', postData, {...options,responseType: 'text'})
   }

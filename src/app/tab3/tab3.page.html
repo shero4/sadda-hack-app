@@ -15,9 +15,11 @@
   <ion-card>
     <ion-card-header>
       <ion-card-title>Hospitals</ion-card-title>
-      <ion-item>
-        Hospital Name: <ion-icon name="ellipse" color="danger"></ion-icon> URGENT
-      </ion-item>
+      <ion-list *ngFor="let hosp of allHospData">
+        <ion-item>
+          {{hosp.name}}: <ion-icon name="ellipse" color="danger"></ion-icon> URGENT
+        </ion-item>
+      </ion-list>
     </ion-card-header>
   </ion-card>  
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
