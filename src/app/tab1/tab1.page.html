@@ -1,12 +1,14 @@
 
 <ion-content [fullscreen]="true">
  
-    <ion-toolbar align="center" style="margin-top: 20px;">
-      <ion-title style="font-size:35px">Dashboard</ion-title>
-    </ion-toolbar>
+   <div class="topText" align="center">
+    <h2 style="font-size:35px">Dashboard</h2>
+   </div>
+     
+   
 
   <div class="top" align="center">
-    <h2 style="text-decoration: underline;">Your Capacity.</h2>
+    <h2>Your Capacity.</h2>
     <ion-item>
       <ion-label position="floating">Current Capacity</ion-label>
       <ion-input type="number" [(ngModel)]="currentCapacity" name=" currentCapacity" required></ion-input>

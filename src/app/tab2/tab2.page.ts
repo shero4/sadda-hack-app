@@ -15,6 +15,10 @@ export class Tab2Page {
   email: string;
   description: string;
   problem: string;
+  lat:number= 51.678418;
+  lng:number= 7.809007;
+  lat1:number= 52.678418;
+  lng1:number= 7.809007;
 
   constructor(
     private http: HttpClient,
@@ -27,6 +31,11 @@ export class Tab2Page {
     firebase.default.auth().onAuthStateChanged(async user => {
         this.email = user.email
       })
+  }
+  onChoseLocation(event)
+  {
+    this.lat = event.coords.lat;
+    this.lng = event.coords.lng; 
   }
 
   async presentModal() {

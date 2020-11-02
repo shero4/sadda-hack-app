@@ -16,6 +16,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { HttpClientModule } from '@angular/common/http';
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [AppComponent],
@@ -29,7 +30,10 @@ import { HttpClientModule } from '@angular/common/http';
      AngularFireAuthModule,
      AngularFireStorageModule,
      AngularFirestoreModule,
-     HttpClientModule
+     HttpClientModule,
+     AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyCNApAMDoncPlgjoMcGTNqUjSJYo5rKQn8'
+    })
     ],
   providers: [
     StatusBar,

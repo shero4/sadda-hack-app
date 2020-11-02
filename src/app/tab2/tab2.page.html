@@ -1,31 +1,30 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      View hospitals
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Request</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Request</ion-card-title>
-      <ion-card-subtitle>Explain your problem, and how others can help</ion-card-subtitle>
-    </ion-card-header>
-    <ion-card-content>
-      <ion-input type="text" placeholder="Problem" [(ngModel)]="problem" name="problem"></ion-input>
-      <ion-input type="text" placeholder="Description" [(ngModel)]="description" name="description"></ion-input>
-      <ion-button (click)="sendRequest()">Request Help</ion-button>
-    </ion-card-content>
-  </ion-card>
+ 
+  <ion-toolbar align="center" style="margin-top: 20px;">
+    <ion-title style="font-size:35px ;text-decoration: underline;">Request</ion-title>
+  </ion-toolbar>
+  <div class="card" align="center">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-subtitle>Explain your problem, and how others can help</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-input type="text" placeholder="Problem" [(ngModel)]="problem" name="problem"></ion-input>
+        <ion-input type="text" placeholder="Description" [(ngModel)]="description" name="description"></ion-input>
+        <ion-button (click)="sendRequest()">Request Help</ion-button>
+      </ion-card-content>
+    </ion-card>
+  </div>
+  
   <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="presentModal()">
     <ion-fab-button>
       <ion-icon name="notifications"></ion-icon>
     </ion-fab-button>
   </ion-fab>
+  <div class="foot" align="center">
+    <agm-map  [latitude]="lat" [longitude]="lng" (mapClick)="onChoseLocation($event)">
+      <agm-marker [latitude]="lat" [longitude]="lng" ></agm-marker>
+      <agm-marker [latitude]="lat1" [longitude]="lng1"></agm-marker>
+    </agm-map>
+  </div>
 </ion-content>

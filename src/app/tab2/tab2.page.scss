@@ -1,0 +1,22 @@
+ion-content{
+    --background: #FEECEC; 
+}
+ion-toolbar{
+    --background: #FEECEC; 
+    color: #EB9497;
+}
+.card {
+    margin: 40px; 
+    ion-card-header{
+        opacity: 0.75;
+        --background: #c75f5f;
+        color: white;
+    }
+    ion-card-title{
+        color: white;  
+    }
+}
+agm-map{
+    width: 350px; 
+    height: 300px;
+}
