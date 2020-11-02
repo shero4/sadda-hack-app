@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Request
+      View hospitals
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -12,4 +12,20 @@
       <ion-title size="large">Request</ion-title>
     </ion-toolbar>
   </ion-header>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Request</ion-card-title>
+      <ion-card-subtitle>Explain your problem, and how others can help</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-input placeholder="Problem"></ion-input>
+      <ion-input type="text" placeholder="Description"></ion-input>
+      <ion-button>Request Help</ion-button>
+    </ion-card-content>
+  </ion-card>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="notifications"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

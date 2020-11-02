@@ -12,4 +12,30 @@
       <ion-title size="large">Dashboard</ion-title>
     </ion-toolbar>
   </ion-header>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Your personal dashboard at Medica.</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="floating">Capacity</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+      <ion-button>Save</ion-button>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Hospital Accomodation</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      5 / 12
+      <ion-progress-bar value="0.5"></ion-progress-bar>
+    </ion-card-content>
+  </ion-card>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="notifications"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>
