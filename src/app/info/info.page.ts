@@ -66,12 +66,10 @@ export class InfoPage implements OnInit {
           data.user.updateProfile({
       
             displayName: this.username,
-            photoURL: "https://kathandesai.co/images/hospital-buildings.svg",
           })
           this.afstore.collection('userdata').doc(uid).set({
             uid: uid,
             email: this.email,
-            img: "https://kathandesai.co/images/hospital-buildings.svg",
             hospitalName:this.hospitalName,
             number:this.number,
             username:this.username,
