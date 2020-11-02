@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Platform } from '@ionic/angular';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpResponse } from '@angular/common/http';
 import { AngularFireAuth } from '@angular/fire/auth';
 
 @Component({
@@ -18,8 +18,20 @@ export class Tab1Page {
     // let data = this.http.get('https://medica-app.arhaanb.co/api/user', {'email': 'whatever@gmail.com'});
     // let jsonData = JSON.stringify(data)
     // console.log(jsonData)
+    this.getHospital().subscribe(data => {
+      console.log(data[0])
+    })
   }
   ngOnInit() {
     this.platform.backButton.observers.pop();
+  }
+
+  getHospital() {
+    let options = {
+      headers: {
+        'email': 'arhaanb@gmail.com'
+      }
+    }
+    return this.http.get(`https://medica-app.arhaanb.co/api/user`, options);
   }
 }
