@@ -35,7 +35,6 @@ export class Tab1Page {
     firebase.default.auth().onAuthStateChanged(user => {
       this.email = user.email
       this.getHospitalData().subscribe(data => {
-        console.log(data)
         this.currentCapacity = data[0].capacity.current || 0
         this.maxCapacity = data[0].capacity.total || 0
         this.beds = data[0].items.beds || 0

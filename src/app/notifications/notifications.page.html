@@ -6,7 +6,7 @@
 </ion-header>
 
 <ion-content>
-  <ion-list *ngFor="let thing of things">
-    <ion-item>You're running low on {{thing}}</ion-item>
+  <ion-list *ngFor="let hospitalItem of hospitalItems">
+    <ion-item *ngIf="checkIfLess(hospitalItem)">You're running low on {{hospitalItem}}</ion-item>
   </ion-list>
 </ion-content>

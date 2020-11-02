@@ -12,20 +12,50 @@ import * as firebase from 'firebase';
 export class NotificationsPage implements OnInit {
 
   email:string;
+  hospitalData;
+  hospitalItems;
+  currentCapacity: Number;
 
   constructor(
     private http: HttpClient,
     public afauth: AngularFireAuth,
     public modalController: ModalController
-  ) { }
+  ) {
+    firebase.default.auth().onAuthStateChanged(data => {
+      this.email = data.email;
+      this.getHospitalData().subscribe(hdata => {
+        this.hospitalData = hdata[0].items
+        this.hospitalItems = Object.keys(this.hospitalData)
+        this.currentCapacity = hdata[0].capacity.current
+      })
+    })
+   }
 
   ngOnInit() {
+  }
+
+  checkIfLess(hospitalItem) {
+    let val = this.hospitalData[hospitalItem]
+    if(val < this.currentCapacity) {
+      return true
+    }  else {
+      return false
+    }
   }
 
   closeModal() {
     this.modalController.dismiss({
       'dismissed': true
     });
+  }
+
+  getHospitalData() {
+    let options = {
+      headers: {
+        'email': this.email
+      }
+    }
+    return this.http.get(`https://medica-app.arhaanb.co/api/user`, options);
   }
 
 }
