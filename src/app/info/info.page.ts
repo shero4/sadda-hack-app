@@ -63,6 +63,27 @@ export class InfoPage implements OnInit {
           this.password
         ).then(async (data)=>{
           let uid = data.user.uid;
+          data.user.updateProfile({
+      
+            displayName: this.username,
+          })
+          this.afstore.collection('userdata').doc(uid).set({
+            uid: uid,
+            email: this.email,
+            hospitalName:this.hospitalName,
+            number:this.number,
+            username:this.username,
+            address:this.address
+          })
+          .catch ((err) => {
+            if (err.code == "auth/network-request-failed") {
+              this.presentToast("Poor network")
+            }
+            if(err.code == "invalid-argument")
+            {
+              this.presentToast("Enter all details")
+            }
+          })
           this.presentToast("Logged in successfully") 
           this.router.navigateByUrl('/info', { replaceUrl: true })
         }).catch((err)=>{
