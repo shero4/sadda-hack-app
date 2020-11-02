@@ -1,5 +1,5 @@
 ion-content{
-    --background: #f0cac4; 
+    --background: #FEECEC; 
 }
 .icon{
     margin-top: 55px;
@@ -7,12 +7,13 @@ ion-content{
         width: 40%;
     }
     h2{
+        margin-top: -10px;
         font-size: 55px;
-        color: #d3998f;
+        color: #EB9497;
     }
     h1{
         font-size: 15px;
-        color: #d3998f;
+        color: #EB9497;
     }
 }
 .login{
@@ -30,7 +31,7 @@ ion-content{
 
        border: 1px transparent;
        border-radius: 30px;
-       --background: #d3998f;
+       --background: #c75f5f;
        opacity: 0.75;
        margin-bottom:20px ;
       }
@@ -43,6 +44,23 @@ ion-content{
    
 }
 .foot{
+    --box-shadow:none;
+    h1{
+        margin-top:55px ;
+    }
     margin: 40px; 
     opacity: 0.75;
+    ion-item{
+        --box-shadow:none;
+        --background:none;
+        ion-label{
+            font-style: oblique;
+            color:  #c75f5f;
+            font-size: 35px;
+        }
+        ion-avatar{
+            width: 4em !important; 
+            height :4em !important;
+        }
+    }
 }
