@@ -56,21 +56,21 @@
       <ion-label position="floating" color="light">Blood Pressure Monitors</ion-label>
       <ion-input type="number" [(ngModel)]="bloodPressureMonitors" name="bloodPressureMonitors" required ></ion-input>
     </ion-item>
- 
-    <ion-button (click)="updateHospitalData()" type="submit" color="light" shape="round"
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Hospital Accomodation</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>{{currentCapacity}} / {{maxCapacity}}</p> 
+        <ion-progress-bar value="{{currentCapacity/maxCapacity}}"></ion-progress-bar>
+      </ion-card-content>
+    </ion-card>
+    <ion-button (click)="updateHospitalData()" type="submit"  shape="round"
     expand="block" style="margin-top: 2.5em; margin-bottom: 4px;">Submit</ion-button>
-    <ion-button (click)="logout()" type="submit" color="light" shape="round"
+    <ion-button (click)="logout()" type="submit"  shape="round"
     expand="block" style="margin-top: 2.5em; margin-bottom: 4px;">Logout</ion-button>
   </div>
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Hospital Accomodation</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      {{currentCapacity}} / {{maxCapacity}}
-      <ion-progress-bar value="{{currentCapacity/maxCapacity}}"></ion-progress-bar>
-    </ion-card-content>
-  </ion-card>
+
   <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="presentModal()">
     <ion-fab-button>
       <ion-icon name="notifications"></ion-icon>

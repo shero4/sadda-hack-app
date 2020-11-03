@@ -1,11 +1,15 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>notifications</ion-title>
-    <ion-button slot="end" (click)="closeModal()">Close</ion-button>
+    <ion-button slot="end" (click)="closeModal()" slot="end">Close</ion-button>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+
+  <div class="topText" align="center">
+    <h2 style="font-size:35px">NOTIFICATIONS</h2>
+   </div>
+     
   <ion-list *ngFor="let hospitalItem of hospitalItems">
     <ion-item *ngIf="checkIfLess(hospitalItem)">You're running low on {{hospitalItem}}</ion-item>
   </ion-list>

@@ -64,8 +64,8 @@ ion-content{
        }
 
 }
-.foot{
-    margin: 40px;
+ion-card{
+    margin-top: 10px;
     ion-card-header{
         opacity: 0.70;
         --background: #c75f5f;
@@ -80,7 +80,17 @@ ion-content{
     ion-card-content{
         opacity: 0.70;
         --background: #c75f5f;
-        color: white;
+        
         font-family: "Europa-bold";
+
+        p{
+            color: #EB9497;
+            font-size: 25px;
+        }
     }
+}
+ion-button{
+    opacity: 0.70;
+    --background: #c75f5f;
+    color: white;
 }
