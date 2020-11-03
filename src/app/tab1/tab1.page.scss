@@ -22,8 +22,7 @@ ion-content{
         color: white;
         border: 1px transparent;
         border-radius: 25px;
-        --background: #c75f5f;
-        opacity: 0.80;
+        --background: #D27578;
         margin-bottom:20px ;
        }
 }
@@ -57,8 +56,7 @@ ion-content{
         color: white;
         border: 1px transparent;
         border-radius: 25px;
-        --background: #c75f5f;
-        opacity: 0.80;
+        --background: #D27578;
         margin-bottom:20px ;
         font-family: "Europa-bold";
        }
@@ -67,8 +65,8 @@ ion-content{
 ion-card{
     margin-top: 10px;
     ion-card-header{
-        opacity: 0.70;
-        --background: #c75f5f;
+        
+        --background: #D27578;
         color: white;
         font-family: "Europa-bold";
         
@@ -78,8 +76,8 @@ ion-card{
         font-family: "Europa-bold";
     }
     ion-card-content{
-        opacity: 0.70;
-        --background: #c75f5f;
+       
+        --background: #D27578;
         
         font-family: "Europa-bold";
 
@@ -90,7 +88,7 @@ ion-card{
     }
 }
 ion-button{
-    opacity: 0.70;
-    --background: #c75f5f;
+    
+    --background: #D27578;
     color: white;
 }
