@@ -1,16 +1,16 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-button slot="end" (click)="closeModal()" slot="end">Close</ion-button>
-  </ion-toolbar>
+  
 </ion-header>
 
 <ion-content>
-
+  <ion-toolbar>
+    <ion-icon name="arrow-back-outline" slot="start" (click)="closeModal()" class="social"></ion-icon>
+  </ion-toolbar>
   <div class="topText" align="center">
     <h2 style="font-size:35px">NOTIFICATIONS</h2>
    </div>
      
   <ion-list *ngFor="let hospitalItem of hospitalItems">
-    <ion-item *ngIf="checkIfLess(hospitalItem)">You're running low on {{hospitalItem}}</ion-item>
+    <ion-item *ngIf="checkIfLess(hospitalItem)" lines="none">You're running low on {{hospitalItem}}</ion-item>
   </ion-list>
 </ion-content>

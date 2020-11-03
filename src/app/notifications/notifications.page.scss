@@ -1,6 +1,9 @@
 ion-content{
     --background: #FEECEC; 
 }
+ion-toolbar{
+    --background: #FEECEC; 
+}
 .topText{
     background:#f6d9d8;
     border: 1px transparent;
@@ -17,3 +20,9 @@ ion-content{
 ion-list{
     margin: 40px;
 }
+.social {
+    font-size: 40px;
+    color: #EB9497;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
