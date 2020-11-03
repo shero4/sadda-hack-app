@@ -86,12 +86,16 @@ export class InfoPage implements OnInit {
   async createUserInApi() {
     let options = {
       headers: {
-        'email': this.email, 
+        // 'email': this.email, 
       } 
     }  
     let postData = {
-      // request: this.problem,
-      // dsc: this.description
+      name: this.hospitalName,
+      username: this.username,
+      email: this.email,
+      address: this.address,
+      password: this.password,
+      pNumber: this.number
     }
     this.http.post('https://medica-app.arhaanb.co/api/register', postData, {...options,responseType: 'text'}).subscribe(data => {
       console.log(data)
