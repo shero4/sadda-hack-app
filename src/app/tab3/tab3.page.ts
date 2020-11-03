@@ -40,8 +40,9 @@ export class Tab3Page {
         // 'email': this.email, 
       }
     }
-    return this.http.get(`https://medica-app.arhaanb.co/api/hospitals`, options);
+    return this.http.get(`https://sahyog-app.arhaanb.co/api/hospitals`, options);
   }
+
   check(item) {
     if (item.status.requested == 1) {
       return true

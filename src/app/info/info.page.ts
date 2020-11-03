@@ -88,7 +88,7 @@ export class InfoPage implements OnInit {
       headers: {
         // 'email': this.email, 
       } 
-    }  
+    }
     let postData = {
       name: this.hospitalName,
       username: this.username,
@@ -97,7 +97,7 @@ export class InfoPage implements OnInit {
       password: this.password,
       pNumber: this.number
     }
-    this.http.post('https://medica-app.arhaanb.co/api/register', postData, {...options,responseType: 'text'}).subscribe(data => {
+    this.http.post('https://sahyog-app.arhaanb.co/api/register', postData, {...options,responseType: 'text'}).subscribe(data => {
       console.log(data)
     })
   }

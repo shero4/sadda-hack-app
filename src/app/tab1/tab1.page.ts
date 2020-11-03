@@ -86,7 +86,7 @@ export class Tab1Page {
       suits: this.suits,
       ventilators: this.ventilators,
     }
-    this.http.post('https://medica-app.arhaanb.co/api/set', postData, {...options,responseType: 'text'}).subscribe(data => {
+    this.http.post('https://sahyog-app.arhaanb.co/api/set', postData, {...options,responseType: 'text'}).subscribe(data => {
       console.log(data)
     })
   }
@@ -97,15 +97,15 @@ export class Tab1Page {
         'email': this.email
       }
     }
-    return this.http.get(`https://medica-app.arhaanb.co/api/user`, options);
+    return this.http.get(`https://sahyog-app.arhaanb.co/api/user`, options);
   }
-  async logout(){
-    
+
+  async logout(){  
     await this.afauth.signOut();
     await this.router.navigateByUrl('/login');
     await this.presentToast("you are logged out");
-
   }
+  
   async presentToast(message1: string) {
     const toast = await this.toastController.create({
       message: message1,

@@ -52,11 +52,22 @@ export class Tab2Page {
       request: this.problem,
       dsc: this.description
     }
-    this.http.post('https://medica-app.arhaanb.co/api/request', postData, {...options,responseType: 'text'}).subscribe(data => {
+    this.http.post('https://sahyog-app.arhaanb.co/api/request', postData, {...options,responseType: 'text'}).subscribe(data => {
       console.log(data)
     })
   }
   deleteRequest(){
-    
+    let options = {
+      headers: {
+        'email': this.email, 
+      } 
+    }
+    let postData = {
+      
+    }
+    // /api/del-request
+    this.http.post('https://sahyog-app.arhaanb.co/api/del-request', postData, {...options,responseType: 'text'}).subscribe(data => {
+      console.log(data)
+    })
   }
 }

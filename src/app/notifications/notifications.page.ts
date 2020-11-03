@@ -56,7 +56,7 @@ export class NotificationsPage implements OnInit {
         'email': this.email
       }
     }
-    return this.http.get(`https://medica-app.arhaanb.co/api/user`, options);
+    return this.http.get(`https://sahyog-app.arhaanb.co/api/user`, options);
   }
   returnHospitalItem(hospitalItem){
     let x = hospitalItem;
