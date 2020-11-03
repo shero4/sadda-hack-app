@@ -1,6 +1,9 @@
 ion-content{
     --background: #FEECEC; 
 }
+ion-toolbar{
+    --background: #FEECEC; 
+}
 .icon{
     margin-top: 25px;
     img{
@@ -33,8 +36,7 @@ ion-content{
        color: white;
        border: 1px transparent;
        border-radius: 25px;
-       --background: #c75f5f;
-       opacity: 0.70;
+       --background: #D27578;
        margin-bottom:20px ;
       }
       ion-input{
@@ -51,3 +53,10 @@ ion-content{
     margin: 40px; 
     opacity: 0.75;
 }
+.social {
+    font-size: 40px;
+    color: #EB9497;
+   
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }

@@ -102,4 +102,8 @@ export class InfoPage implements OnInit {
     })
   }
 
+  closeModal() {
+   this.router.navigateByUrl('/login')
+  }
+
 }
