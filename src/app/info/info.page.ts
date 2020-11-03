@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { ToastController, AlertController, MenuController } from '@ionic/angular';
 import { LoadingController } from '@ionic/angular';
 import { Platform } from '@ionic/angular';
+import { HttpClient, HttpResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-info',
@@ -17,7 +18,6 @@ export class InfoPage implements OnInit {
   number: string;
   hospitalName: string;
   username: string;
-  uid: string;
   email: string
   password: string;
   CPassword: string;
@@ -27,6 +27,7 @@ export class InfoPage implements OnInit {
     public router: Router,
     private platform: Platform,
     public toastController: ToastController,
+    private http: HttpClient,
     public alertCtrl: AlertController,
     public loadingController: LoadingController,
     public menu: MenuController
@@ -62,7 +63,7 @@ export class InfoPage implements OnInit {
         this.email,
         this.password
       ).then(async (data) => {
-        let uid = data.user.uid;
+        await this.createUserInApi()
         this.presentToast("Logged in successfully")
         this.router.navigateByUrl('/tabs', { replaceUrl: true })
       }).catch((err) => {
@@ -80,6 +81,21 @@ export class InfoPage implements OnInit {
     } else {
       this.presentToast('Password dont match.')
     }
+  }
+
+  async createUserInApi() {
+    let options = {
+      headers: {
+        'email': this.email, 
+      } 
+    }  
+    let postData = {
+      // request: this.problem,
+      // dsc: this.description
+    }
+    this.http.post('https://medica-app.arhaanb.co/api/register', postData, {...options,responseType: 'text'}).subscribe(data => {
+      console.log(data)
+    })
   }
 
 }

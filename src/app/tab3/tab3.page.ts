@@ -13,7 +13,7 @@ import { NotificationsPage } from '../notifications/notifications.page';
 export class Tab3Page {
 
   allHospData;
-  ref:boolean=false;
+  ref: boolean = false;
   constructor(
     private http: HttpClient,
     public afauth: AngularFireAuth,
@@ -22,7 +22,7 @@ export class Tab3Page {
     this.getAllHospitalData().subscribe(data => {
       this.allHospData = data
       console.log(this.allHospData)
-        })
+    })
   }
 
   async presentModal() {
@@ -42,15 +42,12 @@ export class Tab3Page {
     }
     return this.http.get(`https://medica-app.arhaanb.co/api/hospitals`, options);
   }
-  check(item)
-  {
-    if(item.status.requested == 1)
-    { 
+  check(item) {
+    if (item.status.requested == 1) {
       return true
     }
-    else
-    {
-     return false
+    else {
+      return false
     }
   }
 }
