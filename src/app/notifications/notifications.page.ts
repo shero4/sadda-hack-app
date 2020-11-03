@@ -16,6 +16,7 @@ export class NotificationsPage implements OnInit {
   hospitalItems;
   currentCapacity: Number;
 
+
   constructor(
     private http: HttpClient,
     public afauth: AngularFireAuth,
@@ -57,5 +58,24 @@ export class NotificationsPage implements OnInit {
     }
     return this.http.get(`https://medica-app.arhaanb.co/api/user`, options);
   }
-
+  returnHospitalItem(hospitalItem){
+    let x = hospitalItem;
+     if(x == 'oxygenCylinder')
+     { 
+       return 'Oxygen Cylinder'
+     }
+     if(x == 'pulseOximeters')
+     {
+         return 'Pulse Oximeters'
+     }
+     if(x == 'bloodPressureMonitors')
+     {
+        return 'Blood Pressure Monitors'
+     }
+     else
+     { 
+       return x
+     }
+  
+  }
 }

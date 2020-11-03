@@ -17,12 +17,21 @@ ion-toolbar{
         font-family: "Europa-bold";
     }
 }
-ion-list{
+.list{
     margin: 40px;
+    ion-item{
+        --background: #FCD7D8; 
+        border: 1px transparent;
+        border-radius: 25px;
+        color: #EB9497;
+        font-size: 15px;
+    }
+    
 }
 .social {
     font-size: 40px;
     color: #EB9497;
+   
     padding-left: 0.5em;
     padding-right: 0.5em;
   }

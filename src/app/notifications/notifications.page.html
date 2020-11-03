@@ -10,7 +10,9 @@
     <h2 style="font-size:35px">NOTIFICATIONS</h2>
    </div>
      
-  <ion-list *ngFor="let hospitalItem of hospitalItems">
-    <ion-item *ngIf="checkIfLess(hospitalItem)" lines="none">You're running low on {{hospitalItem}}</ion-item>
-  </ion-list>
+   <div class="list"  *ngFor="let hospitalItem of hospitalItems">
+    <ion-item *ngIf="checkIfLess(hospitalItem)" lines="none">You're running low on {{returnHospitalItem(hospitalItem)}}.</ion-item>
+   </div>
+   
+ 
 </ion-content>
