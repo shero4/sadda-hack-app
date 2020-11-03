@@ -7,7 +7,7 @@
 Essentially a dashboard system, where hospitals manage their own staff, equipment and supplies, and keep it in check.
 
 ### View the dashboard system (in working) [here](https://arhaanb.co/sahyog/app)
-### Download the mobile app (in working) [here](https://arhaanb.co/sahyog/apk)
+### Download the mobile app (in working) [here](https://arhaanb.co/sahyog/apk) ** sample user creds, username: info@maxhospitalindia.com pass: max123
 
 During this almost Third World War, all medical faculties would have to work together, pitch in, look beyond just profit to help out other surrounding hospitals to keep operating, and ensuring that no patient is left unseen.
 
