@@ -9,8 +9,7 @@ ion-content{
 }
 .top
 { 
-    margin: 40px;
-   
+    margin: 40px; 
     border: 1px transparent;
     h2{
         color: #EB9497;
@@ -18,13 +17,22 @@ ion-content{
         
     }
     ion-item{
-        box-shadow: 5px 5px 26px 0px rgba(0, 0, 0, 0.3);
         color: white;
         border: 1px transparent;
         border-radius: 25px;
         --background: #D27578;
         margin-bottom:20px ;
+        display: flex;
        }
+ion-label{
+    margin: auto;
+    text-align: center;
+    font-family: "Europa-bold";
+}
+ion-input{
+    font-family: "Europa-bold";
+    text-align: center;
+}
 }
 .topText{
     background:#f6d9d8;
@@ -60,7 +68,15 @@ ion-content{
         margin-bottom:20px ;
         font-family: "Europa-bold";
        }
-
+       ion-label{
+        margin: auto;
+        text-align: center;
+        font-family: "Europa-bold";
+    }
+    ion-input{
+        font-family: "Europa-bold";
+        text-align: center;
+    }
 }
 ion-card{
     margin-top: 10px;
