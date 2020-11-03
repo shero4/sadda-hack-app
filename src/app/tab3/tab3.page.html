@@ -8,14 +8,14 @@
 		</ion-card-header>
 		<ion-card-content align="center">
 			<p style="color:#E8A9AA">{{hosp.phone}}</p>
-			<p *ngIf="check(hosp)" style="color: #894040;">Urgent</p>
+			<p *ngIf="check(hosp)" style="color: #894040;"> <span class="circle"></span> Urgent</p>
 			<ion-button *ngIf="check(hosp)" shape="round">Help Them</ion-button>
 			<p *ngIf="!check(hosp)" style="color: #894040;">Self-Sufficient</p>
 			<br>
 		</ion-card-content>
 	</ion-card>
 	<ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="presentModal()">
-		<ion-fab-button>
+		<ion-fab-button color="tertiary">
 			<ion-icon name="notifications"></ion-icon>
 		</ion-fab-button>
 	</ion-fab>
